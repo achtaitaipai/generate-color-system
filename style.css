@@ -1,0 +1,93 @@
+* {
+	/* margin: 0;
+	padding: 0; */
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: var(--clr-brand12);
+	background-color: var(--clr-neutral1);
+	line-height: 1.6;
+}
+main {
+	margin: max(5%, 2rem);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+.flow > * + * {
+	margin-top: 1rem;
+}
+
+summary {
+	background-color: var(--clr-neutral3);
+	padding: 0.2rem 0.3rem;
+	cursor: pointer;
+}
+details {
+	padding-inline: 0.5rem;
+}
+a,
+a:visited {
+	position: relative;
+	color: var(--clr-brand9);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+a::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: currentColor;
+	top: 100%;
+	left: 0;
+	transform-origin: 50%;
+	transform: scaleX(0);
+	transition: transform 0.2s;
+}
+
+a:hover::after {
+	transform: scaleX(1);
+}
+
+input:not([type='checkbox']) {
+	height: 2rem;
+	font-size: 1.2rem;
+	width: 100%;
+	color: var(--clr-neutral12);
+	background-color: var(--clr-neutral3);
+}
+
+button {
+	position: relative;
+	border: 2px solid var(--clr-brand7);
+	padding: 0.2rem 0.3rem;
+	background-color: transparent;
+	border-radius: 0.3rem;
+	color: var(--clr-brand9);
+	font-weight: 700;
+	cursor: pointer;
+}
+
+button::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: var(--clr-brand9);
+	clip-path: circle(0);
+	transition: clip-path 0.3s;
+	z-index: -1;
+}
+
+button:hover {
+	color: var(--clr-brand2);
+}
+
+button:hover::before {
+	clip-path: circle(100%);
+}
