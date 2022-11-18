@@ -9,7 +9,7 @@ export function generateColorSystem(...args: RadixColorKey[]) {
 	})
 	let darkColorSystem: Record<string, string> = {}
 	args.forEach((el, i) => {
-		darkColorSystem = { ...darkColorSystem, ...colorList(values[i], el) }
+		darkColorSystem = { ...darkColorSystem, ...colorList(values[i], el, true) }
 	})
 	const colorSystem = { light: lightColorSystem, dark: darkColorSystem }
 	return colorSystem
